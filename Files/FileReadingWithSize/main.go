@@ -22,7 +22,7 @@ func main() {
 	fileInfo, err := file.Stat()
 	ErrorCheck(err)
 
-	data := make([]byte, fileInfo.Size())
+	data := CreateSlice(fileInfo.Size())
 
 	ReadFile(file, data)
 
@@ -45,6 +45,12 @@ func DisplayData(data []byte, bytesRead int) {
 func Close(file *os.File) {
 	err := file.Close()
 	ErrorCheck(err)
+}
+
+func CreateSlice(size int64) []byte {
+	data := make([]byte, size)
+
+	return data
 }
 
 func ErrorCheck(err error) {
