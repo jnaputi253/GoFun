@@ -1,0 +1,5 @@
+This is a test file
+that will be read.
+The length of the slice should be
+allocated based on the file size.
+If all is well, this will all print out regardless of the size.
